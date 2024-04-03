@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmr2nkny08ku5"]
+
+[ext_resource type="Script" path="res://scenes/menus/submenus/settings.gd" id="1_nb6sy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5618u"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wslw"]
+bg_color = Color(1, 0.611765, 0.823529, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c1h0"]
+bg_color = Color(1, 0.776471, 0.890196, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchor_right = 0.521
+anchor_bottom = 0.694
+offset_right = -0.0800171
+offset_bottom = 0.160004
+script = ExtResource("1_nb6sy")
+
+[node name="volume_label" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Volume:"
+
+[node name="volume_slider" type="HSlider" parent="."]
+layout_mode = 2
+offset_top = 34.0
+offset_right = 250.0
+offset_bottom = 50.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_5618u")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_0wslw")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_4c1h0")
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="sense_label" type="Label" parent="."]
+layout_mode = 2
+offset_top = 50.0
+offset_right = 96.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Sensitivity:"
+
+[node name="sense_slider" type="HSlider" parent="."]
+layout_mode = 2
+offset_top = 84.0
+offset_right = 250.0
+offset_bottom = 100.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_5618u")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_0wslw")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_4c1h0")
+min_value = 0.01
+max_value = 3.0
+step = 0.01
+value = 1.0
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 0
+offset_top = 110.0
+offset_right = 244.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+button_pressed = true
+text = "Pixelated Graphics"
+
+[connection signal="drag_ended" from="volume_slider" to="." method="_on_volume_slider_drag_ended"]
+[connection signal="value_changed" from="volume_slider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="drag_ended" from="sense_slider" to="." method="_on_sense_slider_drag_ended"]
+[connection signal="value_changed" from="sense_slider" to="." method="_on_sense_slider_value_changed"]
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]

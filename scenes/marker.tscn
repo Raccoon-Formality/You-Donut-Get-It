@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuofrmxyjfxr4"]
+
+[ext_resource type="Texture2D" uid="uid://chtsqp8nen7pq" path="res://assets/textures/smoke.png" id="1_v38iq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5p787"]
+transparency = 1
+albedo_texture = ExtResource("1_v38iq")
+texture_filter = 0
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_yp8gy"]
+material = SubResource("StandardMaterial3D_5p787")
+
+[sub_resource type="Curve" id="Curve_ooalh"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.754717, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="CPUParticles3D" type="CPUParticles3D"]
+emitting = false
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_yp8gy")
+spread = 180.0
+initial_velocity_min = 3.0
+initial_velocity_max = 3.0
+scale_amount_curve = SubResource("Curve_ooalh")
