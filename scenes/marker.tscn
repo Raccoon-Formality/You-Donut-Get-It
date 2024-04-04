@@ -4,6 +4,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5p787"]
 transparency = 1
+blend_mode = 1
 albedo_texture = ExtResource("1_v38iq")
 texture_filter = 0
 billboard_mode = 3

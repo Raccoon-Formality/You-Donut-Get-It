@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3c3vitjjqy7r"
-path="res://.godot/imported/checker.png-5e2b6ff6c0c0f48b47257da03e3aea4a.ctex"
+uid="uid://dglrukd5qs8ed"
+path="res://.godot/imported/wood.jpg-897dc28bf1d4f7dbf1db92bcbec9e6da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/checker.png"
-dest_files=["res://.godot/imported/checker.png-5e2b6ff6c0c0f48b47257da03e3aea4a.ctex"]
+source_file="res://assets/textures/wood.jpg"
+dest_files=["res://.godot/imported/wood.jpg-897dc28bf1d4f7dbf1db92bcbec9e6da.ctex"]
 
 [params]
 

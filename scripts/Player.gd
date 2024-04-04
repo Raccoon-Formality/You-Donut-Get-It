@@ -43,11 +43,7 @@ func _input(event):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if global_position.y < -10:
-		global_position = start_pos
-		angular_velocity = Vector3.ZERO
-		$tryagain.play()
-		Global.deaths += 1
-		deaths_label.text = str(Global.deaths)
+		die()
 	Global.time += delta
 	if Global.time < 60.0:
 		time_label.text = str(snapped(Global.time, 0.01))
@@ -81,6 +77,14 @@ func _on_body_entered(body):
 var save_vel
 var save_ang_vel
 
+func die():
+	global_position = start_pos
+	angular_velocity = Vector3.ZERO
+	linear_velocity = Vector3.ZERO
+	$tryagain.play()
+	Global.deaths += 1
+	deaths_label.text = str(Global.deaths)
+
 func pause():
 	freeze = true
 	save_vel = linear_velocity
@@ -95,3 +99,8 @@ func unpause():
 	set_process_input(true)
 	set_process(true)
 
+
+
+func _on_player_area_area_entered(area):
+	if area.is_in_group("death"):
+		die()

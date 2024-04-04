@@ -3,23 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crhohyv2kekyl"
-path.s3tc="res://.godot/imported/regularshow.png-f618c6840115b76fe2e1c8b3d16e9093.s3tc.ctex"
-path.etc2="res://.godot/imported/regularshow.png-f618c6840115b76fe2e1c8b3d16e9093.etc2.ctex"
+path="res://.godot/imported/regularshow.png-f618c6840115b76fe2e1c8b3d16e9093.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/textures/regularshow.png"
-dest_files=["res://.godot/imported/regularshow.png-f618c6840115b76fe2e1c8b3d16e9093.s3tc.ctex", "res://.godot/imported/regularshow.png-f618c6840115b76fe2e1c8b3d16e9093.etc2.ctex"]
+dest_files=["res://.godot/imported/regularshow.png-f618c6840115b76fe2e1c8b3d16e9093.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=1.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

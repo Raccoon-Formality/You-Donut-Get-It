@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3c3vitjjqy7r"
-path="res://.godot/imported/checker.png-5e2b6ff6c0c0f48b47257da03e3aea4a.ctex"
+uid="uid://b76ew47um1yn7"
+path="res://.godot/imported/water.jpg-eba32e6bbb53adabbfb2720c2da57651.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/checker.png"
-dest_files=["res://.godot/imported/checker.png-5e2b6ff6c0c0f48b47257da03e3aea4a.ctex"]
+source_file="res://assets/textures/water.jpg"
+dest_files=["res://.godot/imported/water.jpg-eba32e6bbb53adabbfb2720c2da57651.ctex"]
 
 [params]
 

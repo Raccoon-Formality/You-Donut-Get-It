@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3c3vitjjqy7r"
-path="res://.godot/imported/checker.png-5e2b6ff6c0c0f48b47257da03e3aea4a.ctex"
+uid="uid://cetumym2da3vy"
+path="res://.godot/imported/wall.png-35b80c25b8f7299ed1631f28676b0e6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/checker.png"
-dest_files=["res://.godot/imported/checker.png-5e2b6ff6c0c0f48b47257da03e3aea4a.ctex"]
+source_file="res://assets/textures/wall.png"
+dest_files=["res://.godot/imported/wall.png-35b80c25b8f7299ed1631f28676b0e6a.ctex"]
 
 [params]
 
 compress/mode=1
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=1.0
 compress/hdr_compression=1
 compress/normal_map=0

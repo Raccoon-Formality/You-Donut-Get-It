@@ -7,7 +7,6 @@ func _ready():
 	add_child(firstPart)
 	firstPart.emitting = true
 
-
 	
 
 

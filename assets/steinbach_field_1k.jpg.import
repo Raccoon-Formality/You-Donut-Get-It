@@ -3,23 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0uce8dtvq8m2"
-path.bptc="res://.godot/imported/steinbach_field_1k.jpg-e5902e2984e371e445dcbcb38ee96b07.bptc.ctex"
-path.astc="res://.godot/imported/steinbach_field_1k.jpg-e5902e2984e371e445dcbcb38ee96b07.astc.ctex"
+path="res://.godot/imported/steinbach_field_1k.jpg-e5902e2984e371e445dcbcb38ee96b07.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/steinbach_field_1k.jpg"
-dest_files=["res://.godot/imported/steinbach_field_1k.jpg-e5902e2984e371e445dcbcb38ee96b07.bptc.ctex", "res://.godot/imported/steinbach_field_1k.jpg-e5902e2984e371e445dcbcb38ee96b07.astc.ctex"]
+dest_files=["res://.godot/imported/steinbach_field_1k.jpg-e5902e2984e371e445dcbcb38ee96b07.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=true
-compress/lossy_quality=0.7
+compress/lossy_quality=1.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
