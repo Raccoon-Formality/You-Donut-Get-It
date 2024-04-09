@@ -85,11 +85,7 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_7mdbk"]
 radius = 0.3
 
-[node name="Player" type="RigidBody3D" groups=["player_body"]]
-mass = 100.0
-max_contacts_reported = 10
-contact_monitor = true
-angular_damp = 2.0
+[node name="Player" type="SoftBody3D" groups=["player_body"]]
 script = ExtResource("1_ica8b")
 
 [node name="CollisionShape" type="CollisionShape3D" parent="."]
@@ -226,6 +222,6 @@ stream = ExtResource("6_qhfrm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player_area"]
 shape = SubResource("SphereShape3D_7mdbk")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/pause_menu/unpause_button" to="CanvasLayer/pause_menu" method="_on_unpause_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause_menu/exit_button" to="CanvasLayer/pause_menu" method="_on_exit_button_pressed"]
+[connection signal="area_entered" from="player_area" to="." method="_on_player_area_area_entered"]

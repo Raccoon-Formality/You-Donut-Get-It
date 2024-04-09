@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://j07hn10hhcua"]
+[gd_scene load_steps=20 format=3 uid="uid://j07hn10hhcua"]
 
 [ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_5r4lc"]
 [ext_resource type="Texture2D" uid="uid://chtsqp8nen7pq" path="res://assets/textures/smoke.png" id="2_kxkab"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://chhwlkfo665u5" path="res://assets/fonts/Aqua Wow.ttf" id="3_y13j8"]
 [ext_resource type="Texture2D" uid="uid://3c3vitjjqy7r" path="res://assets/textures/checker.png" id="4_p04qv"]
 [ext_resource type="FontFile" uid="uid://b2gra7qljgrn" path="res://assets/fonts/Inter-Bold.ttf" id="4_uw20u"]
+[ext_resource type="Texture2D" uid="uid://d0coteq573deg" path="res://assets/youdonutgetit.png" id="5_8piie"]
 [ext_resource type="PackedScene" uid="uid://dmr2nkny08ku5" path="res://scenes/menus/submenus/settings.tscn" id="5_ujk6n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_caul4"]
@@ -203,7 +204,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Youdonutgetit" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(304, 96)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_8piie")
+
 [node name="title" type="RichTextLabel" parent="CanvasLayer/Control"]
+visible = false
 clip_contents = false
 layout_mode = 1
 anchors_preset = 5
@@ -226,6 +233,7 @@ Get It[/rainbow][tornado]"
 fit_content = true
 
 [node name="subtitle" type="Label" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -239,6 +247,22 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_uw20u")
 theme_override_font_sizes/font_size = 18
 text = "by Raccoon Formality"
+
+[node name="subtitle2" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 204.0
+offset_right = 240.0
+offset_bottom = 234.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_uw20u")
+theme_override_font_sizes/font_size = 18
+text = "by Raccoon Formality"
+horizontal_alignment = 1
 
 [node name="start_button" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -312,6 +336,7 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
