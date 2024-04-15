@@ -27,6 +27,14 @@ offset_right = 102.0
 offset_bottom = 101.0
 text = "Level 1"
 
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 151.0
+offset_right = 102.0
+offset_bottom = 182.0
+text = "Level 2"
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 108.0
@@ -52,3 +60,4 @@ theme_override_font_sizes/font_size = 32
 text = "LEVEL SELECT MENU"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -81,8 +81,11 @@ func die():
 	global_position = start_pos
 	angular_velocity = Vector3.ZERO
 	linear_velocity = Vector3.ZERO
-	$tryagain.play()
 	Global.deaths += 1
+	if Global.deaths == 7:
+		$suck.play()
+	else:
+		$tryagain.play()
 	deaths_label.text = str(Global.deaths)
 
 func pause():

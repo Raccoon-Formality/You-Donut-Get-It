@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbwk2niuyg80r"]
+
+[ext_resource type="Shader" path="res://scripts/shaders/chrome.gdshader" id="1_x2ok2"]
+[ext_resource type="Shader" path="res://scripts/shaders/vignette.gdshader" id="2_j38w0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rtnis"]
+shader = ExtResource("1_x2ok2")
+shader_parameter/r_displacement = Vector2(1, 0)
+shader_parameter/g_displacement = Vector2(0, 0)
+shader_parameter/b_displacement = Vector2(-1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pucgd"]
+shader = ExtResource("2_j38w0")
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
+
+[node name="overlay" type="CanvasLayer"]
+layer = 10
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="color" type="ColorRect" parent="Control"]
+material = SubResource("ShaderMaterial_rtnis")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="vignette" type="ColorRect" parent="Control"]
+material = SubResource("ShaderMaterial_pucgd")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

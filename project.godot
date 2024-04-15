@@ -13,12 +13,15 @@ config_version=5
 config/name="YouDonutGetIt"
 run/main_scene="res://scenes/menus/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://assets/textures/icon.svg"
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
+boot_splash/image="res://assets/logo2-trans.png"
+config/icon="res://assets/donuticon.png"
 
 [autoload]
 
 MusicManager="*res://scenes/music_manager.tscn"
 Global="*res://Global.gd"
+Overlay="*res://scenes/menus/overlay.tscn"
 
 [display]
 
@@ -43,12 +46,9 @@ CLICK={
 ]
 }
 
-[physics]
-
-3d/physics_engine="GodotPhysics3D"
-
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+renderer/driver="opengl3"

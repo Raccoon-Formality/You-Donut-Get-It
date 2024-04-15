@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://ds67wkgo3n28m"]
+[gd_scene load_steps=19 format=3 uid="uid://ds67wkgo3n28m"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_ica8b"]
 [ext_resource type="Texture2D" uid="uid://dvjqnxbvm50lh" path="res://assets/textures/donut.png" id="2_4port"]
 [ext_resource type="AudioStream" uid="uid://kuvcwewl1eno" path="res://assets/sounds/tryagain.wav" id="2_b4p78"]
 [ext_resource type="FontFile" uid="uid://chhwlkfo665u5" path="res://assets/fonts/Aqua Wow.ttf" id="3_e3pc8"]
+[ext_resource type="AudioStream" uid="uid://dy862nnp3ya1u" path="res://assets/sounds/suck.wav" id="4_xe5ju"]
 [ext_resource type="PackedScene" uid="uid://dmr2nkny08ku5" path="res://scenes/menus/submenus/settings.tscn" id="5_d705o"]
 [ext_resource type="Script" path="res://scenes/menus/pause_menu.gd" id="5_dohrd"]
 [ext_resource type="AudioStream" uid="uid://c5pnm7k6ti58d" path="res://assets/sounds/impactSoft_heavy_000.ogg" id="5_jim41"]
@@ -108,6 +109,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4fnxt")
 
 [node name="tryagain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_b4p78")
+volume_db = -2.0
+
+[node name="suck" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xe5ju")
+volume_db = 5.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -229,3 +235,4 @@ shape = SubResource("SphereShape3D_7mdbk")
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/pause_menu/unpause_button" to="CanvasLayer/pause_menu" method="_on_unpause_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause_menu/exit_button" to="CanvasLayer/pause_menu" method="_on_exit_button_pressed"]
+[connection signal="area_entered" from="player_area" to="." method="_on_player_area_area_entered"]
