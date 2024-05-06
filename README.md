@@ -1,4 +1,12 @@
 # You Donut Get It
+### What is this?
+video game, go play it here:
+[https://raccoon-formality.itch.io/you-donut-get-it](https://raccoon-formality.itch.io/you-donut-get-it
+)
+
+link to my website:
+[https://raccoonformality.com/](https://raccoonformality.com/)
+
 ### Nerd Shit
 This game was made using Godot version 4.2.1
 
