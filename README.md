@@ -1,7 +1,6 @@
 # You Donut Get It
 ### Nerd Shit
 This game was made using Godot version 4.2.1
-This source code is for version 1.0.2 of the game.
 
 One technical limitation the game has is that almost all of the collision shapes other than the donut had to be basic boxes due to how Godot's physics engine works with concave collision shapes work on RigidBodys. If you plan on playing around or modifying this game, I would recommend looking into the [Godot Jolt addon for Godot 4](https://github.com/godot-jolt/godot-jolt). It fixes the issues with weird collision shapes so you can just generate collision shapes from meshes for everything. However, it comes with the caveat that it won't export to web, which was why I didn't use it in this build of the game.
 
