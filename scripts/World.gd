@@ -1,6 +1,7 @@
 extends Node3D
 
 var part = preload("res://scenes/marker.tscn")
+@export var num: int = 0
 
 func _ready():
 	var firstPart = part.instantiate()
@@ -8,5 +9,8 @@ func _ready():
 	firstPart.emitting = true
 
 	
+
+
+
 
 

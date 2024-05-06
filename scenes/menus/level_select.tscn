@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccq7lnovigk6j"]
+[gd_scene load_steps=7 format=3 uid="uid://ccq7lnovigk6j"]
 
 [ext_resource type="Script" path="res://scripts/menus/level_select.gd" id="1_lcraq"]
+[ext_resource type="FontFile" uid="uid://chhwlkfo665u5" path="res://assets/fonts/Aqua Wow.ttf" id="2_dws53"]
+[ext_resource type="Texture2D" uid="uid://bvsuu71m0qj0j" path="res://assets/donuticon.png" id="3_38pht"]
+[ext_resource type="FontFile" uid="uid://b2gra7qljgrn" path="res://assets/fonts/Inter-Bold.ttf" id="4_erxmn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2mhsd"]
+texture = ExtResource("3_38pht")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6swg"]
 
 [node name="level_select" type="Control"]
 layout_mode = 3
@@ -19,23 +27,107 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 70.0
-offset_right = 102.0
-offset_bottom = 101.0
-text = "Level 1"
+[node name="buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 52.0
+offset_top = 73.0
+offset_right = 428.0
+offset_bottom = 322.0
 
-[node name="Button2" type="Button" parent="."]
+[node name="Button" type="Button" parent="buttons"]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 151.0
-offset_right = 102.0
-offset_bottom = 182.0
-text = "Level 2"
+offset_top = 6.0
+offset_right = 100.0
+offset_bottom = 106.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_dws53")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_2mhsd")
+text = "1"
+
+[node name="Button2" type="Button" parent="buttons"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 6.0
+offset_right = 50.0
+offset_bottom = 106.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_dws53")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_2mhsd")
+text = "2"
+
+[node name="Button3" type="Button" parent="buttons"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 88.0
+offset_top = 6.0
+offset_right = 188.0
+offset_bottom = 106.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_dws53")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_2mhsd")
+text = "3"
+
+[node name="Button4" type="Button" parent="buttons"]
+layout_mode = 0
+offset_top = 127.0
+offset_right = 100.0
+offset_bottom = 227.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_dws53")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_2mhsd")
+text = "4"
+
+[node name="Button5" type="Button" parent="buttons"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 127.0
+offset_right = 50.0
+offset_bottom = 227.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_dws53")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_2mhsd")
+text = "5"
+
+[node name="Button6" type="Button" parent="buttons"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 88.0
+offset_top = 127.0
+offset_right = 188.0
+offset_bottom = 227.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_dws53")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_2mhsd")
+text = "6"
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 108.0
 offset_top = 73.0
@@ -59,5 +151,91 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "LEVEL SELECT MENU"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[node name="loading" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "LOADING..."
+
+[node name="back_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -234.0
+offset_top = 315.0
+offset_right = -140.0
+offset_bottom = 353.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.611765, 0.823529, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_erxmn")
+theme_override_font_sizes/font_size = 24
+text = "<- back"
+flat = true
+
+[node name="scores_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 315.0
+offset_right = 44.0
+offset_bottom = 353.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.611765, 0.823529, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_erxmn")
+theme_override_font_sizes/font_size = 24
+text = "show scores"
+flat = true
+
+[node name="credits_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 135.0
+offset_top = 315.0
+offset_right = 229.0
+offset_bottom = 353.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.611765, 0.823529, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_erxmn")
+theme_override_font_sizes/font_size = 24
+text = "credits"
+flat = true
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_j6swg")
+text = "best times:
+"
+
+[connection signal="pressed" from="buttons/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="buttons/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="buttons/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="buttons/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="buttons/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="buttons/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="scores_button" to="." method="_on_scores_button_pressed"]
+[connection signal="pressed" from="credits_button" to="." method="_on_credits_button_pressed"]

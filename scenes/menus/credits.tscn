@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=3 uid="uid://udq6oee25rxm"]
+
+[ext_resource type="Script" path="res://scenes/menus/credits.gd" id="1_nea51"]
+[ext_resource type="FontFile" uid="uid://b2gra7qljgrn" path="res://assets/fonts/Inter-Bold.ttf" id="2_vxt8p"]
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nea51")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 15.0
+offset_right = 460.0
+offset_bottom = 309.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = "You Donut Get It by Raccoon Formality
+prototype version 1.0.2
+
+Created by Matthew
+Logo by Billy
+Modeling/Texturing - FleshMech
+
+song:
+Local Forecast - Slower Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/
+
+Patreons:
+- Montgomery Gator
+- Lukyan
+- Ron Gilbert
+- FrazzledWings
+- Colorblind Cowboy
+
+Special thanks to Rye, Alice, Lars, and everyone else who has helped me get to where I am now."
+
+[node name="back_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -234.0
+offset_top = 315.0
+offset_right = -140.0
+offset_bottom = 353.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.611765, 0.823529, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_vxt8p")
+theme_override_font_sizes/font_size = 24
+text = "<- back"
+flat = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 315.0
+offset_right = 330.0
+offset_bottom = 353.0
+text = "itch.io link"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 315.0
+offset_right = 452.0
+offset_bottom = 353.0
+text = "website link"
+
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

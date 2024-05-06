@@ -337,12 +337,11 @@ libraries = {
 
 [node name="Label" type="Label" parent="."]
 visible = false
-layout_mode = 0
+layout_mode = 1
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "version 0.01
-prototype test build"
+text = "v1.0"
 
 [connection signal="pressed" from="CanvasLayer/Control/start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/settings_button" to="." method="_on_settings_button_pressed"]

@@ -1,0 +1,105 @@
+[gd_scene load_steps=14 format=3 uid="uid://dgntyo3ktb2gc"]
+
+[ext_resource type="Texture2D" uid="uid://wrbi6qcsbeb4" path="res://assets/models/table_fake_wood.jpg" id="1_7gkbt"]
+[ext_resource type="Texture2D" uid="uid://dglrukd5qs8ed" path="res://assets/textures/wood.jpg" id="2_tjgmp"]
+[ext_resource type="Texture2D" uid="uid://ngvtn1x0khai" path="res://assets/textures/marble.png" id="3_dfi4s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4joaw"]
+size = Vector3(0.1, 1.5, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhrry"]
+albedo_texture = ExtResource("1_7gkbt")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_f3wie"]
+material = SubResource("StandardMaterial3D_jhrry")
+size = Vector3(0.1, 1.5, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ruob8"]
+size = Vector3(1.65, 0.75, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_efowg"]
+material = SubResource("StandardMaterial3D_jhrry")
+size = Vector3(1.65, 0.75, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5ypy"]
+albedo_texture = ExtResource("2_tjgmp")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_vpg6m"]
+material = SubResource("StandardMaterial3D_j5ypy")
+size = Vector3(0.6, 0.6, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tcg4g"]
+size = Vector3(1.75, 0.1, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6hhn"]
+albedo_texture = ExtResource("3_dfi4s")
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_h3de3"]
+material = SubResource("StandardMaterial3D_r6hhn")
+size = Vector3(1.75, 0.1, 1.25)
+
+[node name="furniture" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.75, 0.5)
+shape = SubResource("BoxShape3D_4joaw")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.75, 0.5)
+shape = SubResource("BoxShape3D_4joaw")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.75, -0.5)
+shape = SubResource("BoxShape3D_4joaw")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.75, -0.5)
+shape = SubResource("BoxShape3D_4joaw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.75, 0.5)
+mesh = SubResource("BoxMesh_f3wie")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.75, 0.5)
+mesh = SubResource("BoxMesh_f3wie")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.75, -0.5)
+mesh = SubResource("BoxMesh_f3wie")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.75, -0.5)
+mesh = SubResource("BoxMesh_f3wie")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+shape = SubResource("BoxShape3D_ruob8")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+mesh = SubResource("BoxMesh_efowg")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 1.1, -0.425)
+mesh = SubResource("BoxMesh_vpg6m")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 1.1, -0.425)
+mesh = SubResource("BoxMesh_vpg6m")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_tcg4g")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("BoxMesh_h3de3")

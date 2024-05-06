@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b18wq2f5ei40r"]
+[gd_scene load_steps=40 format=3 uid="uid://b18wq2f5ei40r"]
 
 [ext_resource type="Script" path="res://scripts/World.gd" id="1_kdfur"]
 [ext_resource type="PackedScene" uid="uid://ds67wkgo3n28m" path="res://scenes/player.tscn" id="2_e6g4q"]
@@ -11,10 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://c11eiwsisktky" path="res://scenes/assets/sink.tscn" id="9_evrur"]
 [ext_resource type="Texture2D" uid="uid://cetumym2da3vy" path="res://assets/textures/wall.png" id="10_jh41n"]
 [ext_resource type="Texture2D" uid="uid://3c3vitjjqy7r" path="res://assets/textures/checker.png" id="11_1qbtr"]
+[ext_resource type="Texture2D" uid="uid://00c0gxihv1js" path="res://assets/goiwbf.png" id="11_70r3l"]
 [ext_resource type="Texture2D" uid="uid://c0vfid14oer5" path="res://assets/mouse_left_outline.png" id="13_dpvmt"]
 [ext_resource type="Texture2D" uid="uid://db7aw3o28vf4y" path="res://assets/textures/rust.png" id="13_soxoc"]
 [ext_resource type="Texture2D" uid="uid://7x6uediybswb" path="res://assets/arrow.png" id="14_5fq6w"]
 [ext_resource type="PackedScene" uid="uid://bs0b74feilxxv" path="res://scenes/assets/table.tscn" id="14_k4wmf"]
+[ext_resource type="Texture2D" uid="uid://cdrojjqe7h5ky" path="res://assets/textures/door.png" id="16_v1b44"]
+[ext_resource type="PackedScene" uid="uid://dgntyo3ktb2gc" path="res://scenes/assets/furniture.tscn" id="18_ccy53"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q2o1a"]
 friction = 0.8
@@ -74,13 +77,22 @@ size = Vector3(50, 50, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_pmxsx"]
 size = Vector3(50, 50, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wimhn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qh30"]
 albedo_texture = ExtResource("11_1qbtr")
 uv1_scale = Vector3(10, 10, 10)
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qkbkm"]
-material = SubResource("StandardMaterial3D_wimhn")
+material = SubResource("StandardMaterial3D_3qh30")
+size = Vector2(50, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x1hpp"]
+albedo_texture = ExtResource("10_jh41n")
+uv1_scale = Vector3(10, 10, 10)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_temri"]
+material = SubResource("StandardMaterial3D_x1hpp")
 size = Vector2(50, 50)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nnvbv"]
@@ -102,6 +114,7 @@ radius = 0.1
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_kdfur")
+num = 2
 
 [node name="camera_rig" parent="." instance=ExtResource("5_vvuj6")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 13.8571, 0.361293, 0)
@@ -190,6 +203,26 @@ mesh = SubResource("BoxMesh_my817")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall"]
 shape = SubResource("BoxShape3D_pmxsx")
 
+[node name="wall3" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -21, 0, 20)
+collision_layer = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall3"]
+mesh = SubResource("BoxMesh_my817")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall3"]
+shape = SubResource("BoxShape3D_pmxsx")
+
+[node name="wall4" type="StaticBody3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.01069, 0, 43.2459)
+collision_layer = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall4"]
+mesh = SubResource("BoxMesh_my817")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall4"]
+shape = SubResource("BoxShape3D_pmxsx")
+
 [node name="wall2" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26, 0, 19)
 collision_layer = 3
@@ -203,6 +236,15 @@ shape = SubResource("BoxShape3D_pmxsx")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, -11.0106, 19)
 mesh = SubResource("PlaneMesh_qkbkm")
+
+[node name="Sprite3D6" type="Sprite3D" parent="."]
+transform = Transform3D(-4.96094, -0.623722, -7.49082e-07, -0.623722, 4.96094, -9.41795e-08, 7.54979e-07, 0, -5, -6, 7, 42.4079)
+texture_filter = 0
+texture = ExtResource("11_70r3l")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 3.6809, 23.9894, 19)
+mesh = SubResource("PlaneMesh_temri")
 
 [node name="finish_area" parent="." instance=ExtResource("7_0pue3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.77965, -2.56276, 24.5385)
@@ -239,3 +281,16 @@ transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 
 modulate = Color(1, 0, 0.211765, 1)
 double_sided = false
 texture = ExtResource("13_dpvmt")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(-8.74228e-07, 0, 20, 0, 20, 0, -20, 0, -8.74228e-07, -20, 1.7, 7.8)
+texture_filter = 0
+texture = ExtResource("16_v1b44")
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(-20, 0, -1.74846e-06, 0, 20, 0, 1.74846e-06, 0, -20, 13, 1.7, 41.8)
+texture_filter = 0
+texture = ExtResource("16_v1b44")
+
+[node name="furniture" parent="." instance=ExtResource("18_ccy53")]
+transform = Transform3D(10, 0, 0, 0, 6, 0, 0, 0, 6, -8.87338, -11, 38.3171)
